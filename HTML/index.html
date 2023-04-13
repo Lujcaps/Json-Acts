@@ -19,7 +19,7 @@
     <div class="container" id="card">
         <script>
            const xmlhttp = new XMLHttpRequest();
-            xmlhttp.open("GET", "http://json-acts.test/PHP/index.php");
+            xmlhttp.open("GET", "http://localhost/Json-Acts/PHP/");
             xmlhttp.send();
             xmlhttp.onload = function() {
                 const fishess = JSON.parse(this.responseText).fishes;
