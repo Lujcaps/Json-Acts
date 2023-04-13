@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!-- this is for the bootstrap and css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 
+    <!-- title -->
     <title>Fishes</title>
 </head>
 
 <body>
 
 <h1 class="title">Fishes</h1>
+<!-- this is for the div of the card -->
   <div align ="center" class="profile-area">
     <div class="container" id="card">
         <script>
+          // java script. This section is where you put in the code to fetch the data
            const xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", "http://localhost/Json-Acts/PHP/");
             xmlhttp.send();
             xmlhttp.onload = function() {
                 const fishess = JSON.parse(this.responseText).fishes;
                 const table = document.getElementById('card');
+                // this is for the table of the data/s. this is also for the flip card that was inserted into the html
+                // this fishes will act as the constant of the html file towards the php
                 if(table){
                   for(const i in fishess){
                     const row =`
-                      <div class="flip-card mt-5">
+                      <div class="flip-card mt-4">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <p class="title">${fishess[i].fishes_name}</p>
@@ -51,7 +56,7 @@
       </div>
   </div>
   
-
+<!-- additional: This portion is for the footer, the facebook logo, instagram logo, and also github logo. They are also clickable to proceed to the home of each site. -->
   <footer class="bg-light text-center text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
